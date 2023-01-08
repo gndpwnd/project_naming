@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      /* Add styles for the button and div elements here */
+      /* make the background color black */
+      body {
+        background-color: black;
+      }
+
+      #input {
+        /* Example styles */
+        font-size: 18px;
+        font-family: sans-serif;
+        border: none;
+        background-color: #333;
+        color: #fff;
+        padding: 10px 20px;
+        /* Center the button horizontally*/
+        display: block;
+        margin: 0 auto;
+
+        /* Place the button just above center of the page */
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      #result {
+        /* Example styles */
+        font-size: 36px;
+        font-family: sans-serif;
+        color: #fff;
+        /* Center the div horizontally */
+        display: block;
+        margin: 0 auto;
+
+        /* Place the div just below center of the page */
+        position: absolute;
+        top: 55%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      
+      h1 {
+        color: #fff;
+        font-size: 60px;
+        font-family: sans-serif;
+        text-align: center;
+      }
+
+      .linkp1 {
+        font-size: 18px;
+        font-family: sans-serif;
+        color: #fff;
+        position: absolute;
+        top: 63%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .linkp2 {
+        font-size: 18px;
+        font-family: sans-serif;
+        color: #fff;
+        position: absolute;
+        top: 68%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+    </style>
+  </head>
+  <body>
+    <!--Big title-->
+    <h1>Project Naming Inspiration</h1>
+    <button id="input">Generate Letter Pair</button>
+    <div id="result"></div>
+    <p class="linkp1">Look for cool project names with the letter pair here:</p>
+    <br>
+    <a class="linkp2" href="https://chat.openai.com/chat/"><u>ChatGPT</u></a>
+    <script>
+      const usedPairs = [];
+
+      function generatePair() {
+        // Generate a random letter pair
+        const letter1 = String.fromCharCode(Math.floor(Math.random() * 26) + 65);
+        const letter2 = String.fromCharCode(Math.floor(Math.random() * 26) + 65);
+        const pair = letter1 + letter2;
+
+        // Check if the pair has already been used
+        if (usedPairs.includes(pair)) {
+          console.log("Pair already used: " + pair);
+        } else {
+          console.log("New pair: " + pair);
+          usedPairs.push(pair);
+        }
+
+        // Update the text content of the div element
+        const output = document.querySelector('div');
+        output.textContent = pair;
+      }
+
+      // Add an event listener to the button element
+      const button = document.querySelector('button');
+      button.addEventListener('click', generatePair);
+    </script>
+  </body>
+</html>
