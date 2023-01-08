@@ -22,3 +22,4 @@ jobs:
         with:
           token: ${{ secrets.BUILD_TOKEN }}
           branch: gh-pages
+          folder: .
