@@ -42,17 +42,12 @@
         left: 50%;
         transform: translate(-50%, -50%);
       }
-
-      .link {
-        /* Center the div horizontally */
-        display: block;
-        margin: 0 auto;
-
-        /* Place the div just below center of the page */
-        position: absolute;
-        top: 65%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+      
+      h1 {
+        color: #fff;
+        font-size: 60px;
+        font-family: sans-serif;
+        text-align: center;
       }
 
       .linkp1 {
@@ -78,12 +73,13 @@
     </style>
   </head>
   <body>
+    <!--Big title-->
+    <h1>Project Naming Inspiration</h1>
     <button id="input">Generate Letter Pair</button>
     <div id="result"></div>
     <p class="linkp1">Look for cool project names with the letter pair here:</p>
     <br>
     <a class="linkp2" href="https://chat.openai.com/chat/"><u>ChatGPT</u></a>
-    
     <script>
       const usedPairs = [];
 
